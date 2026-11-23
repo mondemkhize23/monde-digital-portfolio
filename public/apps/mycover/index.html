@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b4f6c">
+<title>MyCover · Concept prototype</title>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="mycover.css">
+</head>
+<body class="theme-mc">
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell" id="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+    <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z" fill="#1b9aaa"/><path d="M11 16l4 4 7-8" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="label">MyCover</span></div>
+    <nav id="nav" aria-label="Main">
+      <a href="#/overview" data-r="overview"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg><span class="label">Overview</span></a>
+      <a href="#/policies" data-r="policies"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span class="label">Policies</span></a>
+      <a href="#/claims" data-r="claims"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h5"/></svg><span class="label">Claims</span></a>
+      <a href="#/new" data-r="new"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span class="label">New claim</span></a>
+    </nav>
+    <div class="side-foot"><button class="collapse" id="collapse" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg><span class="label">Collapse</span></button><a class="label back" href="../../index.html">← Portfolio</a></div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="content">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="proto"><b>Concept prototype</b><span> · fictional customer &amp; data · no real policies or claims</span></div>
+      <div class="user"><span class="avatar" aria-hidden="true">TD</span><span class="who"><b>Thandi Demo</b><small>Sample customer</small></span></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="foot"><p class="disclaimer">Independently developed concept prototype. Not a launched insurance product and not affiliated with, endorsed by, or representative of Discovery or any other financial or insurance provider. No insurance policies or claims are processed. Policies and claims shown are fictional and stored only in this browser.</p></footer>
+  </div>
+</div>
+<script src="../../js/common.js"></script>
+<script src="mycover.js"></script>
+</body>
+</html>
