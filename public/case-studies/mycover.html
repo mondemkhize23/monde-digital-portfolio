@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MyCover insurance self-service portal concept case study by Monde Mkhize.">
+  <title>MyCover | Case Study — Monde Mkhize</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090d0b;
+      --surface: #111a15;
+      --surface-light: #17221b;
+      --text: #f2f5f1;
+      --muted: #a0aaa2;
+      --accent: #a8d5ae;
+      --border: rgba(255,255,255,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    .back-link {
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      padding: 100px 0 75px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin-top: 40px;
+    }
+
+    .meta-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .meta-item strong {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 75px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 25px;
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 35px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .content-card p,
+    .section-copy {
+      color: var(--muted);
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      color: var(--muted);
+    }
+
+    .feature-list li::before {
+      content: "↗ ";
+      color: var(--accent);
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .tech-list span {
+      border: 1px solid var(--border);
+      background: var(--surface-light);
+      border-radius: 30px;
+      padding: 8px 15px;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .prototype {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .prototype p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: #09110b;
+      padding: 13px 22px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: 0.9rem;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 650px) {
+      .content-grid,
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 0 55px;
+      }
+
+      .meta {
+        gap: 20px;
+      }
+
+      .prototype {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-content">
+      <a href="../index.html" class="brand">MONDE MKHIZE.</a>
+      <a href="../index.html" class="back-link">← Back to portfolio</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Case Study / Insurance Technology</p>
+      <h1>MyCover.</h1>
+      <p class="hero-description">
+        Designing an insurance self-service portal concept that
+        brings essential policy and claims interactions into
+        one accessible digital experience.
+      </p>
+
+      <div class="meta">
+        <div class="meta-item">
+          <span>Project type</span>
+          <strong>Independent concept</strong>
+        </div>
+        <div class="meta-item">
+          <span>Focus</span>
+          <strong>UI/UX & Web Development</strong>
+        </div>
+        <div class="meta-item">
+          <span>Technologies</span>
+          <strong>HTML, CSS, JavaScript, Node.js</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="container">
+        <p class="section-label">01 / Overview</p>
+        <h2>Project overview</h2>
+        <p class="section-intro">
+          MyCover is an independent insurance self-service portal
+          concept developed to demonstrate how customers could
+          access key insurance services through a structured
+          digital interface.
+        </p>
+
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>The concept</h3>
+            <p>
+              A centralised customer experience for accessing
+              a dashboard, submitting claims and reviewing
+              previously submitted claim records.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3>My contribution</h3>
+            <p>
+              Designed and developed the interface and supporting
+              application functionality, including API integration,
+              data validation and database operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">02 / Opportunity</p>
+        <h2>The problem space</h2>
+        <p class="section-copy">
+          Insurance-related interactions can involve multiple
+          steps and different types of customer information.
+          MyCover explores a more organised self-service experience
+          where important actions and information are presented
+          in a single interface.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">03 / Objectives</p>
+        <h2>Project objectives</h2>
+
+        <div class="content-grid">
+          <div class="content-card">
+            <h3>Clear navigation</h3>
+            <p>
+              Organise the main customer actions into an interface
+              that is straightforward to navigate.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3>Claims management</h3>
+            <p>
+              Demonstrate a structured process for submitting
+              claims and viewing claim history.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3>Data handling</h3>
+            <p>
+              Connect the interface to backend services that
+              validate and store demonstration records.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h3>Responsive experience</h3>
+            <p>
+              Build an interface that adapts to different
+              screen sizes and device types.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">04 / Features</p>
+        <h2>Key features</h2>
+        <p class="section-intro">
+          The prototype brings together several core
+          self-service interactions.
+        </p>
+
+        <ul class="feature-list">
+          <li>Customer dashboard</li>
+          <li>Claims submission interface</li>
+          <li>Claim history table</li>
+          <li>Structured form inputs</li>
+          <li>Backend API integration</li>
+          <li>SQLite record storage</li>
+          <li>Server-side validation</li>
+          <li>Responsive layouts</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">05 / Technical implementation</p>
+        <h2>Bringing the concept to life</h2>
+        <p class="section-copy">
+          The application combines a front-end interface with
+          a Node.js and Express backend. REST API endpoints
+          support the submission and retrieval of demonstration
+          claim records, while SQLite provides persistent storage.
+          Validation is applied on the server to support
+          structured data handling.
+        </p>
+
+        <div class="tech-list">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Node.js</span>
+          <span>Express.js</span>
+          <span>REST API</span>
+          <span>SQLite</span>
+          <span>Responsive Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">06 / Learning</p>
+        <h2>What this project demonstrates</h2>
+        <p class="section-copy">
+          MyCover demonstrates my ability to connect interface
+          development with backend application functionality.
+          It provided practical experience in structuring
+          customer-facing workflows, handling form submissions,
+          working with REST APIs and persisting application data.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="prototype">
+          <div>
+            <p class="section-label">Explore the project</p>
+            <h2>Experience MyCover.</h2>
+            <p>Open the working concept prototype.</p>
+          </div>
+
+          <a
+            href="../apps/mycover/index.html"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer">
+            View Prototype ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <p class="section-label">Project note</p>
+        <div class="disclaimer">
+          MyCover is an independent portfolio concept prototype
+          created for demonstration and educational purposes.
+          It is not a launched insurance product and is not
+          affiliated with any insurance provider.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Monde Mkhize. Digital Design & Technology Portfolio.
+    </div>
+  </footer>
+
+</body>
+</html>

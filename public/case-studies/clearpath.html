@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClearPath — an independent financial-services onboarding concept by Monde Mkhize, showcasing user experience design and web development.">
+  <meta name="theme-color" content="#0b0d0c">
+  <title>ClearPath | Case Study — Monde Mkhize</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #0b0d0c;
+      --surface: #121715;
+      --surface-light: #19211d;
+      --accent: #b7e4c7;
+      --text: #f3f5f2;
+      --muted: #a1aaa4;
+      --border: rgba(255,255,255,0.10);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 48px, var(--max-width));
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11,13,12,0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 17px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav-links a:hover,
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .back-link {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 105px 0 90px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(183,228,199,0.09), transparent 45%),
+        var(--background);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 88px);
+      letter-spacing: -4px;
+      max-width: 850px;
+      margin-bottom: 26px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 21px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #101612;
+    }
+
+    .button-primary:hover {
+      background: #d0f2dc;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 7px;
+    }
+
+    .meta-item strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 25px 0 90px;
+    }
+
+    .section {
+      padding: 75px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 46px);
+      letter-spacing: -1.5px;
+      max-width: 750px;
+      margin-bottom: 25px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 16px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .content-block h3 {
+      font-size: 21px;
+      margin-bottom: 14px;
+    }
+
+    .content-block p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 35px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .feature-number {
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .process-list {
+      margin-top: 35px;
+      display: grid;
+      gap: 0;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 75px 1fr;
+      gap: 20px;
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .process-item span {
+      color: var(--accent);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .process-item h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .process-item p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 720px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .tech-tag {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 9px 14px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .highlight-panel {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 38px;
+      margin-top: 30px;
+    }
+
+    .highlight-panel h3 {
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .highlight-panel p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 800px;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: 12px;
+      padding: 22px;
+      border-left: 2px solid var(--accent);
+      background: var(--surface);
+      margin-top: 30px;
+    }
+
+    .next-project {
+      padding: 70px 0;
+      text-align: center;
+    }
+
+    .next-project h2 {
+      margin: 0 auto 20px;
+    }
+
+    .next-project p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .project-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .highlight-panel {
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-links {
+        gap: 9px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .logo {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="../index.html">MONDE MKHIZE.</a>
+
+        <div class="nav-links">
+          <a href="../index.html">Portfolio</a>
+          <a href="#overview">Overview</a>
+          <a href="#process">Process</a>
+          <a href="#technical">Technical</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Independent Project · Case Study 01</p>
+
+      <h1>ClearPath<span style="color: var(--accent)">.</span></h1>
+
+      <p class="hero-description">
+        Simplifying the financial-services onboarding experience through
+        structured user journeys, accessible interface patterns and
+        practical web development.
+      </p>
+
+      <div class="button-group">
+        <a class="button button-primary"
+           href="../apps/clearpath/index.html"
+           target="_blank" rel="noopener noreferrer">
+          Explore the prototype ↗
+        </a>
+
+        <a class="button button-secondary" href="../index.html">
+          Back to portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="project-meta">
+      <div class="meta-item">
+        <span>Project</span>
+        <strong>Financial Services Concept</strong>
+      </div>
+
+      <div class="meta-item">
+        <span>Focus</span>
+        <strong>UI/UX & Development</strong>
+      </div>
+
+      <div class="meta-item">
+        <span>Role</span>
+        <strong>Independent Designer & Developer</strong>
+      </div>
+
+      <div class="meta-item">
+        <span>Platform</span>
+        <strong>Responsive Web Application</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <section class="section" id="overview">
+      <p class="section-label">01 / Project Overview</p>
+
+      <h2>A clearer approach to digital onboarding.</h2>
+
+      <p class="section-intro">
+        ClearPath is an independently developed financial-services
+        onboarding concept. The project explores how a structured
+        digital experience can make application journeys easier
+        to understand and navigate.
+        <br><br>
+        The concept focuses on clear form hierarchy, accessible
+        input patterns, meaningful customer feedback and reliable
+        submission handling.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="section-label">02 / The Opportunity</p>
+
+      <div class="two-column">
+        <div class="content-block">
+          <h3>The challenge</h3>
+          <p>
+            Digital onboarding journeys can become difficult to follow
+            when forms are poorly structured, instructions are unclear
+            or users receive insufficient feedback when entering
+            information.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>The opportunity</h3>
+          <p>
+            Create a more organised application experience through
+            clear information hierarchy, straightforward input
+            patterns, validation and useful feedback throughout
+            the submission process.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">03 / Project Objectives</p>
+
+      <h2>What the experience needed to achieve.</h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-number">01</div>
+          <h3>Clear navigation</h3>
+          <p>
+            Organise the onboarding journey into understandable
+            steps and structured information.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">02</div>
+          <h3>Accessible inputs</h3>
+          <p>
+            Use clear labels and straightforward input patterns
+            to support form completion.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">03</div>
+          <h3>Useful validation</h3>
+          <p>
+            Provide client-side and server-side validation to
+            handle submitted information appropriately.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">04</div>
+          <h3>Responsive experience</h3>
+          <p>
+            Develop interfaces that adapt to different screen
+            sizes and devices.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <p class="section-label">04 / Design & Development Process</p>
+
+      <h2>From interface structure to working prototype.</h2>
+
+      <div class="process-list">
+
+        <div class="process-item">
+          <span>01</span>
+          <div>
+            <h3>Understanding the journey</h3>
+            <p>
+              Consider the information a customer needs to provide
+              and how the onboarding experience can be organised
+              into a clear, logical sequence.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>02</span>
+          <div>
+            <h3>Interface structure</h3>
+            <p>
+              Develop a structured interface using clear form
+              hierarchy, input patterns and customer feedback
+              elements.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>03</span>
+          <div>
+            <h3>Front-end development</h3>
+            <p>
+              Build responsive interfaces using HTML, CSS and
+              JavaScript, with attention to layout, interaction
+              and usability.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>04</span>
+          <div>
+            <h3>Back-end integration</h3>
+            <p>
+              Connect the application to a REST API using
+              Node.js and Express, with SQLite used to store
+              demonstration application records.
+            </p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>05</span>
+          <div>
+            <h3>Validation and refinement</h3>
+            <p>
+              Implement client-side and server-side validation
+              to improve the handling of form submissions
+              and demonstration application data.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">05 / Key Features</p>
+
+      <h2>Core experience and functionality.</h2>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <div class="feature-number">FEATURE 01</div>
+          <h3>Structured onboarding forms</h3>
+          <p>
+            An organised application interface designed to
+            guide users through the information required
+            for a demonstration application.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">FEATURE 02</div>
+          <h3>Form validation</h3>
+          <p>
+            Client-side and server-side checks help validate
+            submitted information.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">FEATURE 03</div>
+          <h3>Customer feedback</h3>
+          <p>
+            Interface feedback communicates relevant
+            information during the application journey.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">FEATURE 04</div>
+          <h3>Data persistence</h3>
+          <p>
+            Demonstration application submissions are
+            processed through an API and stored in SQLite.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="technical">
+      <p class="section-label">06 / Technical Implementation</p>
+
+      <h2>Design thinking supported by practical development.</h2>
+
+      <p class="section-intro">
+        ClearPath combines front-end interface development
+        with back-end application functionality. The project
+        demonstrates an understanding of how the user-facing
+        experience connects to data processing and persistence.
+      </p>
+
+      <div class="tech-list">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">Node.js</span>
+        <span class="tech-tag">Express.js</span>
+        <span class="tech-tag">REST API</span>
+        <span class="tech-tag">SQLite</span>
+        <span class="tech-tag">Responsive Design</span>
+        <span class="tech-tag">Figma</span>
+      </div>
+
+      <div class="highlight-panel">
+        <h3>Connecting the front end and back end</h3>
+        <p>
+          The front end handles the user-facing onboarding
+          experience. Form submissions are connected to an
+          Express REST API, where server-side validation
+          supports the processing of demonstration application
+          data before it is stored in SQLite.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">07 / Learning & Reflection</p>
+
+      <h2>What this project demonstrates.</h2>
+
+      <div class="two-column">
+        <div class="content-block">
+          <h3>Design perspective</h3>
+          <p>
+            The project demonstrates the importance of
+            organising information, maintaining clear
+            interface hierarchy and considering the user's
+            journey when building digital experiences.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>Development perspective</h3>
+          <p>
+            Building the application strengthened practical
+            experience with responsive front-end development,
+            API integration, form validation and database
+            persistence.
+          </p>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Project status:</strong> ClearPath is an
+        independently developed concept prototype created
+        for portfolio and learning purposes. It is not a
+        launched financial product and is not affiliated
+        with, endorsed by or representative of Discovery
+        or any other financial-services provider.
+      </div>
+    </section>
+
+    <section class="next-project">
+      <p class="section-label">Explore the project</p>
+
+      <h2>Experience ClearPath in action.</h2>
+
+      <p>
+        Explore the working prototype and its interface.
+      </p>
+
+      <a class="button button-primary"
+         href="../apps/clearpath/index.html"
+         target="_blank" rel="noopener noreferrer">
+        Open ClearPath prototype ↗
+      </a>
+
+      <div style="margin-top: 25px;">
+        <a class="back-link" href="../index.html">
+          ← Return to portfolio
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© 2026 Monde Mkhize. All rights reserved.</span>
+      <span>Digital Design · Development · Technology</span>
+    </div>
+  </footer>
+
+</body>
+</html>
